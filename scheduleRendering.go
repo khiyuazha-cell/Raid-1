@@ -1,5 +1,24 @@
 package main
 
+func centerCell(content string, cellWidth int) string {
+	padding := cellWidth - len(content)
+	if padding < 0 {
+		return "error: content is wider than cell width"
+	}
+	leftPadding := padding / 2
+	rightPadding := padding - leftPadding
+	return fmt.Sprintf("%s%s%s", strings.Repeat(" ", leftPadding), content, strings.Repeat(" ", rightPadding))
+}
+
+// renderBorder принимает количество столбцов (колонок) для отрисовки рамки
+func renderBorder(columnCount int) string {
+	border := "+"
+	for i := 0; i < columnCount; i++ {
+		border += "---------" + "+"
+	}
+	return border
+}
+
 func renderRow(row, busy string, important string, busyColor string, importantColor string) string {
 	line := "|"
 	const cellWidth = 9

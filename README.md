@@ -22,6 +22,14 @@ go run .
 | `1` | Занято / Busy | 🔴 Красный / Red |
 | `2` | Важное / Important | 🟡 Жёлтый / Yellow |
 
+Note: Цвета на которые можно поменять занято/busy и важное/important:
+
+Красный/Red
+Желтый/Yellow
+Синий/blue
+Зеленый/green
+
+
 ## Пример / Example
 
 Входные данные:
@@ -48,6 +56,8 @@ printSchedule([]string{"0102", "1100", "0010", "2001"}, "*", "$", "blue", "green
 - Пустое расписание → `error: empty schedule`
 - Строки разной длины → `error: rows have different lengths`
 - Недопустимые символы → `error: invalid symbol (only 0/1/2 allowed)`
+- Цвета занято/busy и важное/important → `error: busyColor and importantColor cannot be the same`, 
+                                         `error: busyColor and importantColor cannot be empty`
 
 ## Команда / Team
 

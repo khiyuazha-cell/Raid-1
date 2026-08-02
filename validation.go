@@ -6,7 +6,7 @@ package main
 // 3. Недопустимые символы (не 0, 1 или 2)
 //
 // Возвращает ошибку в виде строки. Если всё ОК — возвращает пустую строку.
-func ValidateInput(rows []string) string {
+func ValidateInput(rows []string, busyColor string, importantColor string) string {
 	// Проверка 1: пустое расписание
 	if len(rows) == 0 {
 		return "error: empty schedule"
@@ -31,6 +31,14 @@ func ValidateInput(rows []string) string {
 				return "error: invalid symbol (only 0/1/2 allowed)"
 			}
 		}
+	}
+
+	if busyColor == importantColor {
+		return "error: busyColor and importantColor cannot be the same"
+	}
+
+	if busyColor == "" || importantColor == "" {
+		return "error: busyColor and importantColor cannot be empty"
 	}
 
 	// Если всё прошло проверку

@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"strings"
+)
+
 func centerCell(content string, cellWidth int) string {
 	padding := cellWidth - len(content)
 	if padding < 0 {

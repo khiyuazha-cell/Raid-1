@@ -7,11 +7,12 @@ package main
 //
 // Возвращает ошибку в виде строки. Если всё ОК — возвращает пустую строку.
 func ValidateInput(rows []string, busyColor string, importantColor string) string {
-	// Проверка 1: пустое расписание
+	// Проверка 1: пустое расписание — нет строк вообще
 	if len(rows) == 0 {
 		return "error: empty schedule"
 	}
 
+	// Проверка 1б: первая строка пуста
 	if len(rows[0]) == 0 {
 		return "error: empty schedule"
 	}
@@ -33,10 +34,12 @@ func ValidateInput(rows []string, busyColor string, importantColor string) strin
 		}
 	}
 
+	// Проверка 4: цвета не должны совпадать
 	if busyColor == importantColor {
 		return "error: busyColor and importantColor cannot be the same"
 	}
 
+	// Проверка 5: цвета не должны быть пустыми
 	if busyColor == "" || importantColor == "" {
 		return "error: busyColor and importantColor cannot be empty"
 	}

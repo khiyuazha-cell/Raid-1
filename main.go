@@ -4,13 +4,13 @@ import "fmt"
 
 func main() {
 
-	printSchedule([]string{"01", "21", "00", "20"}, "Busy", "$", "red", "green")
+	printSchedule([]string{"010", "211", "002", "201"}, "Busy", "Importants", "red", "green")
 
 }
 
 func printSchedule(rows []string, busy string, important string, busyColor string, importantColor string) {
-	if ValidateInput(rows, busyColor, importantColor) != "" {
-		fmt.Println(ValidateInput(rows, busyColor, importantColor))
+	if ValidateInput(rows, busy, important, busyColor, importantColor) != "" {
+		fmt.Println(ValidateInput(rows, busy, important, busyColor, importantColor))
 		return
 	}
 	colCount := len(rows[0])

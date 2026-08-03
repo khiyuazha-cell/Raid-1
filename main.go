@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 
-	printSchedule([]string{"0102", "1100", "0010", "2001"}, "*", "$", "blue", "green")
+	printSchedule([]string{"01", "21", "00", "20"}, "Busy", "$", "red", "green")
 
 }
 
@@ -13,10 +13,10 @@ func printSchedule(rows []string, busy string, important string, busyColor strin
 		fmt.Println(ValidateInput(rows, busyColor, importantColor))
 		return
 	}
-	rowCount := len(rows)
-	fmt.Println(renderBorder(rowCount))
+	colCount := len(rows[0])
+	fmt.Println(renderBorder(colCount))
 	for _, row := range rows {
 		fmt.Println(renderRow(row, busy, important, busyColor, importantColor))
-		fmt.Println(renderBorder(rowCount))
+		fmt.Println(renderBorder(colCount))
 	}
 }

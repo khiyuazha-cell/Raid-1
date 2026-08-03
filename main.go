@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 
-	printSchedule([]string{"010", "211", "002", "201"}, "Busy", "Importants", "red", "green")
+	printSchedule([]string{"010", "211", "002", "201"}, "Busy", "Important", "blue", "yellow")
 
 }
 

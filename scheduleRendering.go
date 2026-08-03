@@ -7,7 +7,6 @@ import (
 
 func centerCell(content string, cellWidth int) string {
 	padding := cellWidth - len(content)
-
 	leftPadding := padding / 2
 	rightPadding := padding - leftPadding
 	return fmt.Sprintf("%s%s%s", strings.Repeat(" ", leftPadding), content, strings.Repeat(" ", rightPadding))

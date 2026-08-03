@@ -12,10 +12,10 @@ func printSchedule(rows []string, busy string, important string, busyColor strin
 		fmt.Println(ValidateInput(rows, busyColor, importantColor))
 		return
 	}
-	count := len(rows)
-	fmt.Println(renderBorder(count))
+	colCount := len(rows)
+	fmt.Println(renderBorder(colCount))
 	for _, row := range rows {
 		fmt.Println(renderRow(row, busy, important, busyColor, importantColor))
-		fmt.Println(renderBorder(count))
+		fmt.Println(renderBorder(colCount))
 	}
 }
